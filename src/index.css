@@ -1,0 +1,25 @@
+:root {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: #f2ead5;
+  background: #151b1a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+  --ink: #151b1a;
+  --night: #1d2522;
+  --stone: #e6dcc3;
+  --muted: #9b9a87;
+  --gold: #f1c35c;
+  --red: #d94c43;
+  --line: rgba(230, 220, 195, 0.2);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, a { font: inherit; }
+button { color: inherit; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+#root { min-height: 100vh; }
+::selection { background: var(--red); color: white; }

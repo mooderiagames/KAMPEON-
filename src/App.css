@@ -1,0 +1,116 @@
+.app-shell { min-height: 100vh; overflow: hidden; background-color: var(--ink); background-image: radial-gradient(rgba(241,195,92,.1) 0.7px, transparent .7px); background-size: 8px 8px; }
+.topbar { height: 72px; padding: 0 clamp(20px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); background: rgba(21,27,26,.9); }
+.wordmark { text-decoration: none; color: #f6ead0; font: 30px/1 Impact, 'Arial Narrow', sans-serif; letter-spacing: 0; }
+.wordmark span { color: var(--red); }
+.topbar-meta { display: flex; gap: 34px; align-items: center; color: var(--muted); font-size: 10px; letter-spacing: 1.6px; }
+.build-mark { display: flex; align-items: center; gap: 8px; color: var(--gold); }
+.build-mark i { width: 6px; height: 6px; background: var(--gold); display: inline-block; transform: rotate(45deg); }
+.menu-page { position: relative; min-height: calc(100vh - 72px); max-width: 1440px; margin: auto; padding: clamp(48px, 8vh, 94px) clamp(20px, 9vw, 140px) 100px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 440px); gap: clamp(36px, 7vw, 108px); align-items: center; }
+.menu-page::before { content: ''; position: absolute; left: 49%; top: 11%; bottom: 20%; width: 1px; background: linear-gradient(transparent, rgba(230,220,195,.12), transparent); pointer-events: none; }
+.menu-copy, .selection-panel { animation: arrive .55s ease-out both; }
+.selection-panel { animation-delay: .08s; }
+@keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.eyebrow { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 1.7px; display: flex; align-items: center; gap: 10px; }
+.eyebrow-line { width: 28px; height: 1px; background: var(--red); }
+.menu-copy h1 { margin: 28px 0 22px; font: 900 clamp(72px, 9vw, 124px)/.8 Impact, 'Arial Narrow', sans-serif; letter-spacing: 0; color: #f3e8ce; text-shadow: 4px 4px 0 #803c32; }
+.menu-copy h1 em { display: inline-block; margin-top: 12px; color: var(--gold); font-style: normal; }
+.intro-copy { max-width: 350px; margin: 32px 0 42px; font: 16px/1.6 Georgia, serif; color: #b9b5a5; }
+.menu-rule { min-height: 47px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 12px; color: #e5ddcb; font-size: 11px; letter-spacing: 1px; }
+.menu-rule:last-of-type { border-bottom: 1px solid var(--line); }
+.menu-rule > span:first-child { color: var(--red); font: 14px Impact, sans-serif; }
+.menu-rule > span:last-child { color: var(--muted); font-size: 9px; }
+.menu-rule .rule-active { color: #83bb8c; }
+.menu-disabled { opacity: .56; }
+.selection-panel { position: relative; padding: 26px 24px 20px; background: #e8dfc9; color: var(--ink); border: 1px solid rgba(241,195,92,.6); box-shadow: 8px 8px 0 rgba(9,13,13,.45); }
+.selection-panel::before, .selection-panel::after { content: ''; position: absolute; width: 14px; height: 14px; border-color: var(--red); }
+.selection-panel::before { top: -4px; left: -4px; border-top: 2px solid; border-left: 2px solid; }
+.selection-panel::after { bottom: -4px; right: -4px; border-bottom: 2px solid; border-right: 2px solid; }
+.selection-head { display: flex; align-items: end; justify-content: space-between; padding-bottom: 15px; border-bottom: 1px solid rgba(21,27,26,.2); }
+.selection-head .eyebrow { color: #9e483a; }
+.selection-head h2 { margin: 4px 0 0; font: 26px Impact, 'Arial Narrow', sans-serif; letter-spacing: 0; }
+.select-index { color: #787669; font: 12px monospace; }
+.fighter-options { display: grid; gap: 8px; padding: 14px 0; }
+.fighter-option { min-height: 102px; width: 100%; padding: 9px; display: grid; grid-template-columns: 82px 1fr 20px; gap: 13px; align-items: center; color: #25302c; text-align: left; border: 1px solid rgba(21,27,26,.2); background: rgba(255,255,255,.19); cursor: pointer; transition: background .15s, border-color .15s; }
+.fighter-option:hover, .fighter-option.selected { border-color: var(--fighter-color); background: rgba(255,255,255,.56); }
+.portrait { position: relative; display: block; height: 82px; overflow: hidden; background: linear-gradient(135deg, var(--fighter-color), #292f2a 76%); }
+.portrait::after { content: ''; position: absolute; inset: 0; opacity: .28; background: repeating-linear-gradient(0deg, transparent 0 5px, #151b1a 5px 6px); }
+.portrait-sun { position: absolute; width: 47px; height: 47px; top: 7px; right: -4px; border: 2px solid var(--fighter-accent); border-radius: 50%; opacity: .8; }
+.portrait-body { position: absolute; z-index: 1; width: 39px; height: 60px; left: 21px; bottom: -11px; background: var(--fighter-accent); clip-path: polygon(35% 0, 68% 4%, 84% 24%, 100% 100%, 0 100%, 18% 25%); }
+.portrait-hulyo .portrait-body { border-radius: 46% 46% 0 0; transform: scaleX(.88); }
+.fighter-info { display: grid; gap: 3px; }
+.fighter-number { color: #8d503f; font: 10px monospace; letter-spacing: .8px; }
+.fighter-info strong { font: 23px/1 Impact, 'Arial Narrow', sans-serif; }
+.fighter-info > span:last-child { color: #686d61; font-size: 10px; }
+.fighter-check { color: var(--fighter-color); font-size: 13px; }
+.versus-line { min-height: 42px; display: flex; gap: 10px; align-items: center; border-top: 1px solid rgba(21,27,26,.2); color: #777769; font-size: 9px; letter-spacing: .8px; }
+.versus-line strong { color: #29322e; margin-left: auto; font: 16px Impact, sans-serif; }
+.cpu-chip { padding: 3px 6px; color: #fff; background: #8b463b; font-size: 8px; }
+.primary-button, .secondary-button { min-height: 48px; padding: 0 16px; display: flex; gap: 18px; align-items: center; justify-content: space-between; border: 0; cursor: pointer; font: 15px Impact, 'Arial Narrow', sans-serif; letter-spacing: .3px; }
+.primary-button { color: #fff3d5; background: #a63e38; box-shadow: inset 0 -3px rgba(83,24,24,.35); }
+.primary-button:hover { background: #bd4c42; }
+.primary-button span { font: 20px sans-serif; }
+.secondary-button { color: #34403a; background: transparent; border: 1px solid rgba(21,27,26,.3); }
+.launch-button { width: 100%; }
+.select-footer { display: flex; justify-content: space-between; padding-top: 13px; color: #737367; font: 9px monospace; letter-spacing: .3px; }
+.menu-footer { position: absolute; bottom: 23px; left: clamp(20px, 9vw, 140px); right: clamp(20px, 9vw, 140px); display: flex; justify-content: space-between; color: #73796c; font: 9px monospace; letter-spacing: 1px; }
+.fight-page { max-width: 1180px; padding: 32px 24px 48px; margin: auto; }
+.match-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; color: var(--muted); font: 10px monospace; letter-spacing: 1px; }
+.text-button { padding: 8px 0 8px 12px; border: 0; color: #c2bba9; background: transparent; font: 10px monospace; cursor: pointer; }
+.text-button:hover { color: var(--gold); }
+.combat-hud { min-height: 82px; padding: 11px 18px; display: grid; grid-template-columns: 1fr 84px 1fr; gap: 20px; align-items: center; background: #e6dcc3; color: var(--ink); border: 1px solid rgba(241,195,92,.55); }
+.health-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7px; font-size: 9px; letter-spacing: 1px; }
+.health-label strong { font: 18px Impact, sans-serif; }
+.health-track { height: 15px; background: #a79d86; border: 2px solid #2a302a; padding: 2px; }
+.health-fill { display: block; height: 100%; background: linear-gradient(90deg, #da473e, #ee8b48); transition: width .15s linear; }
+.opponent-health .health-fill { margin-left: auto; background: linear-gradient(90deg, #ee8b48, #da473e); }
+.timer-block { display: grid; place-items: center; line-height: 1; }
+.timer-block span { color: #7a6044; font: 8px monospace; letter-spacing: .5px; }
+.timer-block strong { margin-top: 4px; font: 34px Impact, sans-serif; }
+.arena-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid #778076; background: #18201f; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.phaser-host, .phaser-host canvas { display: block; width: 100%; height: 100%; }
+.result-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; background: rgba(13,17,16,.82); text-align: center; animation: arrive .3s ease-out; }
+.result-overlay h2 { margin: 12px 0 4px; color: var(--gold); font: clamp(36px, 6vw, 68px)/1 Impact, sans-serif; }
+.result-overlay p { margin: 0; color: #d4cbb7; font: 11px monospace; letter-spacing: 2px; }
+.result-actions { display: flex; gap: 10px; margin-top: 24px; }
+.controls-strip { display: flex; flex-wrap: wrap; gap: 13px 20px; align-items: center; padding: 13px 0; color: #b8b19f; font: 9px monospace; }
+.controls-strip > span { display: flex; align-items: center; gap: 4px; }
+.controls-label { color: var(--gold); letter-spacing: 1px; }
+kbd { min-width: 18px; padding: 2px 4px; text-align: center; color: #282d29; background: #d7cdb5; font: 9px monospace; border-radius: 2px; }
+
+@media (max-width: 780px) {
+  .topbar { height: 60px; }
+  .topbar-meta { gap: 12px; font-size: 8px; letter-spacing: .8px; }
+  .menu-page { min-height: calc(100vh - 60px); grid-template-columns: 1fr; gap: 32px; padding: 48px 22px 92px; }
+  .menu-page::before { display: none; }
+  .menu-copy h1 { font-size: clamp(68px, 18vw, 110px); }
+  .intro-copy { margin: 25px 0 30px; }
+  .selection-panel { width: min(100%, 480px); justify-self: center; }
+  .menu-footer { left: 22px; right: 22px; }
+  .fight-page { padding: 22px 14px 32px; }
+  .combat-hud { grid-template-columns: 1fr 56px 1fr; gap: 9px; min-height: 68px; padding: 9px; }
+  .health-label strong { font-size: 15px; }
+  .health-label { font-size: 8px; }
+  .timer-block strong { font-size: 27px; }
+  .timer-block span { font-size: 7px; }
+  .controls-strip { gap: 10px; }
+  .controls-label { flex-basis: 100%; }
+}
+
+@media (max-width: 480px) {
+  .season-mark { max-width: 106px; line-height: 1.4; text-align: right; }
+  .build-mark { font-size: 7px; }
+  .fighter-option { grid-template-columns: 68px 1fr 16px; gap: 9px; }
+  .portrait { height: 76px; }
+  .fighter-info strong { font-size: 20px; }
+  .fighter-info > span:last-child { font-size: 9px; }
+  .selection-panel { padding: 20px 14px 16px; }
+  .match-heading { font-size: 8px; }
+  .health-label strong { font-size: 12px; }
+  .health-track { height: 12px; }
+  .combat-hud { gap: 6px; }
+  .controls-strip { font-size: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
